@@ -1,0 +1,68 @@
+let wcDiscount = [
+        {
+            "_id":123,
+            "discount":[
+                    {
+                        "_id":1,
+                        "amount":100,
+                        "slab_count":"02",
+                        "min_quantity":5,
+                        "valid_from":"2022-09-01",
+                        "valid_to":"2022-01-30"
+                    },
+                       {
+                        "_id":1,
+                        "amount":10,
+                        "slab_count":"04",
+                        "min_quantity":5,
+                        "valid_from":"2022-09-01",
+                        "valid_to":"2022-01-30"
+                    }
+                ],
+            "condition_type":"ZD01"
+        },
+         {
+            "_id":456,
+            "discount":[
+                    {
+                        "_id":10,
+                        "amount":100,
+                        "slab_count":"02",
+                        "min_quantity":5,
+                        "valid_from":"2022-09-01",
+                        "valid_to":"2022-01-30"
+                    },
+                      {
+                        "_id":1,
+                        "amount":10,
+                        "slab_count":"03",
+                        "min_quantity":50,
+                        "valid_from":"2022-09-01",
+                        "valid_to":"2022-01-30"
+                    }
+                ],
+            "condition_type":"ZD04"
+        }
+    ]
+    
+    // find match condition and add amount; else show as usuall.
+    let arr=[]
+    for(let i=0;i<wcDiscount.length;i++){
+        // console.log(wcDiscount[i].discount,"iiii")
+        for(let j=0;j<wcDiscount[i].discount.length;j++){
+            // console.log(wcDiscount[i].discount[j],"jjjj")
+        if(arr[wcDiscount[i]['discount'][j]['slab_count']] !== undefined){
+          arr[wcDiscount[i]['discount'][j]['slab_count']]['amount'] +=wcDiscount[i]['discount'][j]['amount']
+        }else{
+            arr[wcDiscount[i]['discount'][j]['slab_count']]={
+            '_id':wcDiscount[i]['discount'][j]['_id'],
+        'amount':wcDiscount[i]['discount'][j]['amount'],
+'slab_count':wcDiscount[i]['discount'][j]['slab_count'],
+'min_quantity':wcDiscount[i]['discount'][j]['min_quantity'],
+            }
+        }
+        }
+    }
+    
+    console.log(arr)
+    console.log(Object.values(arr))
