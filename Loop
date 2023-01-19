@@ -48,19 +48,17 @@ let wcDiscount = [
     // find match condition and add amount; else show as usuall.
     let arr=[]
     for(let i=0;i<wcDiscount.length;i++){
-        // console.log(wcDiscount[i].discount,"iiii")
         for(let j=0;j<wcDiscount[i].discount.length;j++){
-            // console.log(wcDiscount[i].discount[j],"jjjj")
-        if(arr[wcDiscount[i]['discount'][j]['slab_count']] !== undefined){
-          arr[wcDiscount[i]['discount'][j]['slab_count']]['amount'] +=wcDiscount[i]['discount'][j]['amount']
-        }else{
-            arr[wcDiscount[i]['discount'][j]['slab_count']]={
-            '_id':wcDiscount[i]['discount'][j]['_id'],
-        'amount':wcDiscount[i]['discount'][j]['amount'],
-'slab_count':wcDiscount[i]['discount'][j]['slab_count'],
-'min_quantity':wcDiscount[i]['discount'][j]['min_quantity'],
-            }
-        }
+                 if(arr[wcDiscount[i]['discount'][j]['slab_count']] !== undefined){
+                         arr[wcDiscount[i]['discount'][j]['slab_count']]['amount'] +=wcDiscount[i]['discount'][j]['amount']
+                }else{
+                    arr[wcDiscount[i]['discount'][j]['slab_count']]={
+                        '_id':wcDiscount[i]['discount'][j]['_id'],
+                       'amount':wcDiscount[i]['discount'][j]['amount'],
+                       'slab_count':wcDiscount[i]['discount'][j]['slab_count'],
+                       'min_quantity':wcDiscount[i]['discount'][j]['min_quantity']
+                    }
+             }
         }
     }
     
