@@ -29,9 +29,10 @@ person.address = [{add:'kadma',po:'kadma',ps:'kathikund',pin :'814101'}]
 
 
 Object.assign(person,{Hello:'world'})
-console.log(person) // {...,Hello:'world'}
+console.log(person) // {  firstName: 'Sanjay',lastName: 'Murmu',isExist: false,Hello: 'world'}
 
-// Functional Programm :- design to handle function in a better way mainly  pure function. It also can be used in Object oriented procedural and in function programming paradigms all at the same time.
+// Functional Programm :- Design to handle function in a better way, mainly  pure function. It also can be used in Object oriented procedural and
+// in function programming paradigms all at the same time.
 
 // Imperative                   Vs                      Declarative 
 // How to go about prgram:                    What to achieve from the problem
@@ -39,12 +40,12 @@ console.log(person) // {...,Hello:'world'}
 //     2. Structure
 //     3. logic
     
-//     Ex:-Given a number, find out square of the is Even or odd;
- // Imperative    
+// Ex:-Given a number, find out square of the is Even or odd;
+// Imperative    
 let isEven;
 let number = 3;
 let numSq = number * number
-if(numSq %2 ==0){
+if(numSq % 2 == 0){
     isEven = true
 }else{
     isEven = false
