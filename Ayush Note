@@ -1,0 +1,74 @@
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+console.log("Welcome to Programiz!");
+
+// mutable Object
+// mutable object can be changed after its created
+// let a = ['sanjay']
+// let b = a;
+// b.push('Hello')
+// console.log(a)
+
+// let obj = {
+//     name:"Sanjay",
+//     city:"Bangalore"
+// }
+
+// let obj2 = obj
+// obj2['age'] = 25
+// console.log(obj,"<<<>>>>",obj2)
+
+// Immutable Objects
+// can't be changed after its creation 
+let a = 20;
+// let b = a;
+// b = a+1
+// console.log(a,b)
+
+// Array can be made immutable
+// const myArr = Object.freeze([1,2,3,4,5])
+// myArr.push(6)
+
+
+
+//call method called the function with "this" && arguments provided individually.
+
+// function test(){
+//     console.log(this.name)
+// }
+
+// something={
+//     name:"Sanjay"
+// }
+
+// test.call(something)
+
+function test2(lastName){
+    console.log(this.name + " "+ lastName)
+}
+
+something = {
+    name:"Ayush"
+}
+
+// test2.call(something,"Murmu")
+
+// Apply Tha apply method call function with "this" & arrugment passed as am array;
+test2.apply(something,["Sanjay Murmu","banglore"]);
+
+// Bind will create a copy of test function & will bind "something" to that test function and also will return a function which can be called later ad the requiement.
+
+console.log(test2.bind(something,"Sanjay Murmu"))
+
+// shallow copy example ares: slice and spread operator
+
+let arr = ['BGMI','wer','asffs']
+let shallowCopy = arr.slice(0)
+console.log(shallowCopy)
+// spread operator
+
+let shallow = [...arr]
+console.log(shallow)
+
+// #Deep copy
